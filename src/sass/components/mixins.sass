@@ -1,2 +1,32 @@
-body
-    background-color: pink
+
+
+=media ($size)
+    @media screen and ( min-width: #{$size}px )
+        @content
+=smallshadow
+    box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
+=bigshadow
+    box-shadow: 0 0 10.5px rgba(204,204,223,0.71)
+
+
+    
+=btn ($color)
+    padding: 15px 30px
+    font-size: 12px
+    letter-spacing: 1px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    border-radius: 25px
+    text-decoration: none
+    @if $color == "light"
+        color: $white
+        border: 1px solid $white
+    @else 
+        width: 190px
+        color: $lightgrey
+        border: 1px solid $lightgrey
+        box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
+        +smallshadow
+        
+
