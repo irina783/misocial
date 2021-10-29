@@ -1,5 +1,5 @@
 
-
+@import vars
 =media ($size)
     @media screen and ( min-width: #{$size}px )
         @content
@@ -11,6 +11,8 @@
 
     
 =btn ($color)
+    margin: 0 5px
+    display: inline-block
     padding: 15px 30px
     font-size: 12px
     letter-spacing: 1px
@@ -19,14 +21,22 @@
     text-transform: uppercase
     border-radius: 25px
     text-decoration: none
-    @if $color == "light"
+    transition: background .25 s 
+    &:hover
+        border-color: #6e45e2
+        background-color: #6e45e2
+    @if $color == light
         color: $white
         border: 1px solid $white
-    @else 
+    @else if $color == dark
         width: 190px
         color: $lightgrey
         border: 1px solid $lightgrey
         box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
         +smallshadow
+        &:hover
+            color: $white
+            box-shadow: 0 0 0 black
+
         
 

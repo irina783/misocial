@@ -1,11 +1,52 @@
-ul
-    li
-        a(href="") lorem
-    li
-        a(href="") ipsum
-    li
-        a(href="") dolor
-    li
-        a(href="") lorem
-    li
-        a(href="") ipsum
+-
+    let cards = {
+        card1: {
+            src: "img/ic-satellite.png",
+            alt: "satellite plan",
+            price: 0,
+            description: [
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum",
+            ],
+            href: "#"
+        },
+        card2: {
+            src: "img/ic-mars.png",
+            alt: "mars plan",
+            price: 29,
+            description: [
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum"
+            ],
+            href: "#"
+        },
+        card3: {
+            src: "img/ic-rocket.png",
+            alt: "rocket plan",
+            price: 49,
+            description: [
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum",
+                "lorem ipsum"
+            ],
+            href: "#"
+        },
+    }
+mixin oneCard (item)
+    figure.card
+        figcaption
+            .cardimg
+                img(src=item.src alt=item.alt)
+                p.personal personal
+                p.price 
+                    span= item.price 
+                    | /month
+            .descriptions
+        each desc in item.descriptoin
+            p.description= desc
+        a(href=item.href)
